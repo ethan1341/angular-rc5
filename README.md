@@ -1,6 +1,6 @@
 Ng-League
 
-If you don't want to follow the steps go to https://ng-league.herokuapp.com/ major performance issues because of external database. Also most images are referenced to websites not copied locally.
+If you don't want to follow the steps go to https://ng-league.herokuapp.com/ major performance issues because of external database. Also most images are referenced to websites not copied locally. Also this is not the most up to date version but it is close.
 
 STEPS
 
