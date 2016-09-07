@@ -28,18 +28,14 @@ export class LookupDetailPlayerComponent{
     getChampions(){
         this.championService.getChampions()
             .subscribe(champions => {
-                    console.log(champions)
-                    var championMap = {};
-                    for(var i = 0; i < champions.allChampions.length;i++){
-                       if(champions.allChampions[i].id == this.championId){  //Red syntax even though its exists
-                          this.championImage = champions.allChampions[i].image //Red syntax even though its exists
-                       }
-                    }
-                    this.champions= championMap
-                    console.log(this.champions)
-                },
-                error =>  this.errorMessage = <any>error);
-    }
+                var desiredId = this.championId
+                console.log('adffafaf',this.championId)
+                console.log
+                if (champions.allChampions[desiredId].id == this.championId) {  //Red syntax even though its exists
+                    this.championImage = champions.allChampions[desiredId].image //Red syntax even though its exists
+                }
+            }, error =>  this.errorMessage = <any>error);
+                }
 
     ngOnInit(){
         this.getChampions()

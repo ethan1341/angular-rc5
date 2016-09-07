@@ -35,7 +35,7 @@ export class ChampionService {
 
   private extractData(res: Response) {
     var championObject = {};
-    championObject['allChampions'] = []
+    championObject['allChampions'] = {};
     championObject['Assassins'] = {}
     championObject['Assassins']['AssassinsData'] =[];
     championObject['Fighters'] = {};
@@ -51,9 +51,10 @@ export class ChampionService {
     var body = res.json();
     var key: any;
     for(var i = 0; i < body.length; i++){
-      championObject['allChampions'].push(body[i].championObject);
+      var idMap = body[i].championObject.id;
       body[i].championObject.tags = body[i].championObject.tags[0];
       body[i].championObject.image = body[i].championObject.image.full;
+      championObject['allChampions'][idMap] = body[i].championObject;
         switch(body[i].championObject.tags){
           case "Assassin":
             championObject['Assassins']['AssassinsData'].push(body[i].championObject);
@@ -75,6 +76,7 @@ export class ChampionService {
             break;
         }
     }
+    console.log(championObject['allChampions'])
     return championObject;
   }
 

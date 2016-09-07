@@ -57,9 +57,8 @@ export class ChampionsComponent implements OnInit{
                                 this.championObject = champions; console.log(this.championObject)
                             }, error =>  this.errorMessage = <any>error);
     }
-  gotoDetail(champion: Champion) {
-      console.log(champion)
-      let link = ['champions/detail', champion.id];
+  gotoDetail(championId: number) {
+      let link = ['champions/detail', championId];
       this.router.navigate(link);
   }
 

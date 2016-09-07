@@ -21,6 +21,7 @@ var lookup_service_1 = require('./lookup/lookup.service');
 var items_service_1 = require('./items/items.service');
 var lookup_detail_player_component_1 = require('./lookup/lookup-detail-player.component');
 var lookup_detail_host_component_1 = require('./lookup/lookup-detail-host.component');
+var pipe_1 = require('./pipe/pipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,7 +36,7 @@ var AppModule = (function () {
             ],
             providers: [lookup_service_1.LookupService, champion_service_1.ChampionService, platform_browser_2.BROWSER_SANITIZATION_PROVIDERS, settings_service_1.AuthGuard, items_service_1.ItemsService],
             declarations: [
-                app_component_1.AppComponent, lookup_detail_player_component_1.LookupDetailPlayerComponent, lookup_detail_host_component_1.LookupDetailHostComponent //loaded in my router needs to be included
+                app_component_1.AppComponent, lookup_detail_player_component_1.LookupDetailPlayerComponent, lookup_detail_host_component_1.LookupDetailHostComponent, pipe_1.KeysPipe //loaded in my router needs to be included
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

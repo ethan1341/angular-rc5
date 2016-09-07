@@ -12,7 +12,10 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.use(express.static(__dirname));
 
 //db settings
-var connect = mongoose.connect(' mongodb://ethan1341:Ng2-league>@ds019936.mlab.com:19936/heroku_l1r135hg', function(err) {})
+var connect = mongoose.connect('mongodb://localhost/ng-league', function(err) {})
+////var connect = mongoose.connect('mongodb://ethan1341:ethan@ds019826.mlab.com:19826/heroku_tbzwd2cj', function(err) {console.log(err)})
+//getChampions()
+//getItems()
 var db = mongoose.connection;
 db.once('open', function() {
   console.log('db opened')
@@ -59,7 +62,7 @@ function getItems(){
     }
   })
 }
-getItems()
+//getItems()
 //Loads database with items
 function getChampions(){
   var options = {
@@ -84,7 +87,7 @@ function getChampions(){
   })
 }
 
-getChampions();
+//getChampions();
 
 app.get('/', function(req,res){
     res.sendFile('index.html');
@@ -162,7 +165,7 @@ app.get('/lookup/matchhistory/:name',bodyParser.json(), function(req,res){
       var matchHistory = JSON.parse(body);
       if(matchHistory.status == undefined) {
         // match history exists and did not hit API limit
-        for(var i = 0; i < 2;i++){
+        for(var i = 0; i < 3;i++){
           matchIdList.push(matchHistory.matches[i].matchId)
         }
         async.map(matchIdList, getMatchData, sendHistory);

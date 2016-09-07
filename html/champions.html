@@ -38,9 +38,9 @@
     </ul>
 
     <ul class="champions col-xs-12" *ngIf = "displayList.length == 0  ">
-        <div *ngFor = "let champion of championObject['allChampions']" class="col-xs-4 col-sm-3 col-md-2 champion-grid-item" (click) ="gotoDetail(champion)">
-            <img src = "http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/{{champion.image}}"/>
-            {{champion.name}}
+        <div *ngFor = "let champion of championObject['allChampions'] | keys" class="col-xs-4 col-sm-3 col-md-2 champion-grid-item" (click) ="gotoDetail(champion.value.id)">
+            <img src = "http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/{{champion.value.image}}"/>
+            {{champion.value.name}}
         </div>
     </ul>
 
