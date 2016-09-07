@@ -13,12 +13,10 @@ app.use(express.static(__dirname));
 
 //db settings
 var connect = mongoose.connect('mongodb://localhost/ng-league', function(err) {})
-<<<<<<< HEAD
 ////var connect = mongoose.connect('mongodb://ethan1341:ethan@ds019826.mlab.com:19826/heroku_tbzwd2cj', function(err) {console.log(err)})
 //getChampions()
 //getItems()
-=======
->>>>>>> 728394a77f2ef76e4d6cd9c788fda5c9d16d81e2
+
 var db = mongoose.connection;
 db.once('open', function() {
   console.log('db opened')
